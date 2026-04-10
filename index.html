@@ -23,6 +23,13 @@
 				padding: 0;
 				box-sizing: border-box;
 			}
+			html {
+				scrollbar-width: none;
+			}
+			html::-webkit-scrollbar {
+				width: 0;
+				display: none;
+			}
 			body {
 				background: #1a1610;
 				display: flex;
@@ -32,10 +39,6 @@
 				padding: 45px 30px;
 				font-family: "DM Sans", sans-serif;
 				gap: 30px;
-				scrollbar-width: none;
-			}
-			body::-webkit-scrollbar {
-				display: none;
 			}
 
 			/* ── shared typography ── */
