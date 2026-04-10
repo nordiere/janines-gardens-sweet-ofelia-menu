@@ -15,6 +15,7 @@ $RECYCLE.BIN/
 
 # Rendered exports (menu is re-generated from HTML)
 *.png
+!logo.png
 *.jpg
 *.jpeg
 *.pdf
