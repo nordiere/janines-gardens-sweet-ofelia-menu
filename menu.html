@@ -8,7 +8,6 @@
 			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
 			rel="stylesheet"
 		/>
-		<script src="https://cdn.jsdelivr.net/npm/dom-to-image-more@3/dist/dom-to-image-more.min.js"></script>
 		<style>
 			:root {
 				--ink: #0e0b0e;
@@ -33,29 +32,6 @@
 				padding: 24px 16px;
 				font-family: "DM Sans", sans-serif;
 				gap: 16px;
-			}
-			.save-btn {
-				background: linear-gradient(135deg, var(--gold), #b8832a);
-				color: #0e0b0e;
-				border: none;
-				padding: 11px 28px;
-				font-family: "DM Sans", sans-serif;
-				font-size: 12px;
-				font-weight: 500;
-				letter-spacing: 0.12em;
-				text-transform: uppercase;
-				cursor: pointer;
-				display: flex;
-				align-items: center;
-				gap: 8px;
-				transition: opacity 0.2s;
-			}
-			.save-btn:hover {
-				opacity: 0.85;
-			}
-			.save-btn:disabled {
-				opacity: 0.6;
-				cursor: default;
 			}
 
 			/* ── shared typography ── */
@@ -506,10 +482,8 @@
 		</style>
 	</head>
 	<body>
-		<div style="display: flex; gap: 10px">
-			<button class="save-btn" id="saveBtn" onclick="saveAsJpeg()">
-				💾 &nbsp;Save as JPEG
-			</button>
+		<div style="display: flex; flex-direction: column; align-items: center; gap: 6px; font-family: 'DM Sans', sans-serif; color: #aaa; font-size: 13px;">
+			<div><strong style="color: #ccc;">To save as image:</strong> Right-click the menu below → Inspect → right-click the <code style="background: #333; padding: 1px 5px; border-radius: 3px;">&lt;div class="poster"&gt;</code> node → <strong style="color: #ccc;">Capture node screenshot</strong></div>
 		</div>
 
 		<div class="poster" id="poster">
@@ -791,37 +765,5 @@
 		</div>
 		<!-- /poster -->
 
-		<script>
-			async function saveAsJpeg() {
-				const btn = document.getElementById("saveBtn");
-				btn.textContent = "⏳  Generating…";
-				btn.disabled = true;
-				try {
-					const scale = 3;
-					const node = document.getElementById("poster");
-					const w = node.offsetWidth * scale;
-					const h = node.offsetHeight * scale;
-					const dataUrl = await domtoimage.toJpeg(node, {
-						quality: 0.96,
-						width: w,
-						height: h,
-						style: { transform: `scale(${scale})`, transformOrigin: "top left" },
-					});
-					const a = document.createElement("a");
-					a.href = dataUrl;
-					a.download = "janines-gardens-sushi-menu.jpg";
-					a.click();
-					btn.textContent = "✅  Saved!";
-					setTimeout(() => {
-						btn.textContent = "💾  Save as JPEG";
-						btn.disabled = false;
-					}, 2500);
-				} catch (err) {
-					console.error(err);
-					btn.textContent = "⚠️  Error — try again";
-					btn.disabled = false;
-				}
-			}
-		</script>
 	</body>
 </html>
