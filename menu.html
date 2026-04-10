@@ -135,7 +135,7 @@
 				display: flex;
 				align-items: center;
 				gap: 5px;
-				font-size: 12px;
+				font-size: 14px;
 				color: rgba(250, 245, 236, 0.55);
 				font-weight: 400;
 			}
@@ -143,7 +143,7 @@
 				display: inline-flex;
 				align-items: center;
 				justify-content: center;
-				font-size: 12px;
+				font-size: 10px;
 				font-weight: 700;
 				letter-spacing: 0.05em;
 				padding: 0;
@@ -185,7 +185,7 @@
 			/* inline tags */
 			.tag {
 				display: inline;
-				font-size: 12px;
+				font-size: 10px;
 				font-weight: 700;
 				letter-spacing: 0.02em;
 				padding: 0;
@@ -208,7 +208,7 @@
 				padding: 10px 22px 8px;
 				display: flex;
 				flex-direction: column;
-				gap: 6px;
+				gap: 12px;
 			}
 
 			/* order-info-band */
@@ -282,21 +282,17 @@
 
 			.combo-header {
 				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				padding: 7px 14px 5px 14px;
+				align-items: baseline;
+				gap: 10px;
+				padding: 9px 14px 7px 14px;
 				margin-left: 4px;
 				border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 			}
-			.combo-title-group {
-				display: flex;
-				align-items: center;
-				gap: 9px;
-			}
 			.combo-icon {
-				font-size: 16px;
+				font-size: 18px;
 				line-height: 1;
 				flex-shrink: 0;
+				align-self: center;
 			}
 			.combo-number {
 				font-family: "Shippori Mincho", serif;
@@ -304,9 +300,8 @@
 				color: var(--gold);
 				letter-spacing: 0.15em;
 				text-transform: uppercase;
-				display: block;
-				margin-bottom: 0;
 				opacity: 0.7;
+				flex-shrink: 0;
 			}
 			.combo-name {
 				font-family: "Shippori Mincho", serif;
@@ -314,50 +309,20 @@
 				font-weight: 700;
 				color: var(--cream);
 			}
-			.chip {
-				display: inline;
-				font-size: 12px;
-				letter-spacing: 0.14em;
-				text-transform: uppercase;
-				padding: 2px 6px;
-				border-radius: 2px;
-				font-weight: 500;
-				margin-left: 6px;
-				line-height: 2.2;
-				position: relative;
-				top: -2px;
-			}
-			.chip-vegan {
-				background: rgba(107, 140, 110, 0.25);
-				color: var(--sage);
-			}
-			.chip-fish {
-				background: rgba(232, 160, 122, 0.2);
-				color: var(--salmon);
-			}
-			.chip-mix {
-				background: rgba(201, 151, 58, 0.18);
-				color: var(--gold-light);
-			}
-
-			.combo-price-block {
-				text-align: right;
-				flex-shrink: 0;
-				margin-left: 10px;
-			}
 			.combo-pieces {
 				font-size: 12px;
 				color: #888;
-				letter-spacing: 0.1em;
-				display: block;
-				margin-bottom: 0;
+				letter-spacing: 0.05em;
+				margin-left: auto;
+				flex-shrink: 0;
 			}
 			.combo-price {
 				font-family: "Shippori Mincho", serif;
-				font-size: 16px;
+				font-size: 18px;
 				font-weight: 800;
 				color: var(--gold-light);
 				letter-spacing: -0.02em;
+				flex-shrink: 0;
 			}
 
 			.combo-body {
@@ -372,13 +337,13 @@
 				align-items: flex-start;
 				gap: 8px;
 				color: rgba(250, 245, 236, 0.8);
-				font-size: 16px;
+				font-size: 18px;
 				font-weight: 300;
 				line-height: 1.4;
 			}
 			.combo-row .bullet {
 				color: var(--gold);
-				font-size: 14px;
+				font-size: 18px;
 				line-height: 1.4;
 				flex-shrink: 0;
 			}
@@ -414,29 +379,19 @@
 				gap: 8px;
 			}
 			.addon-text {
-				font-size: 13px;
-				color: rgba(250, 245, 236, 0.5);
+				font-size: 18px;
+				color: rgba(250, 245, 236, 0.8);
 				font-weight: 300;
-				line-height: 1.3;
+				line-height: 1.4;
 				flex: 1;
 			}
 			.addon-price {
 				font-family: "Shippori Mincho", serif;
-				font-size: 14px;
+				font-size: 18px;
 				font-weight: 700;
-				color: var(--salmon);
+				color: var(--gold-light);
 				white-space: nowrap;
 				flex-shrink: 0;
-			}
-
-			.icon-divider {
-				display: flex;
-				align-items: center;
-				justify-content: center;
-				gap: 7px;
-				opacity: 0.25;
-				font-size: 13px;
-				letter-spacing: 2px;
 			}
 
 			/* ── UNIVERSAL ADD-ONS ── */
@@ -472,13 +427,13 @@
 				margin-top: 4px;
 			}
 			.universal-addon-text {
-				font-size: 14px;
-				color: rgba(250, 245, 236, 0.65);
+				font-size: 18px;
+				color: rgba(250, 245, 236, 0.8);
 				font-weight: 300;
 			}
 			.universal-addon-price {
 				font-family: "Shippori Mincho", serif;
-				font-size: 15px;
+				font-size: 18px;
 				font-weight: 700;
 				color: var(--gold-light);
 				white-space: nowrap;
@@ -490,44 +445,18 @@
 				border-top: 1px solid rgba(201, 151, 58, 0.2);
 				padding: 8px 22px;
 			}
-			.footer-top {
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				gap: 10px;
-				margin-bottom: 5px;
-			}
-			.footer-left {
-				display: flex;
-				align-items: center;
-				gap: 8px;
-			}
-			.footer-icon {
-				font-size: 14px;
-			}
-			.footer-text {
-				font-size: 13px;
-				color: rgba(250, 245, 236, 0.55);
-				line-height: 1.35;
-				font-weight: 300;
-			}
-			.footer-text strong {
-				color: var(--gold-light);
-				font-weight: 500;
-			}
-			.footer-icons {
-				font-size: 14px;
-				display: flex;
-				gap: 4px;
-				opacity: 0.5;
-			}
-
 			.contact-block {
 				display: grid;
-				grid-template-columns: 1.3fr 1px 1fr 1px 1fr;
+				grid-template-columns: 1fr 1px 1.3fr 1px 1fr;
 				align-items: start;
-				border-top: 1px solid rgba(255, 255, 255, 0.06);
-				padding-top: 5px;
+			}
+			.contact-block-pickup {
+				display: grid;
+				grid-template-columns: 1fr 1px 1fr;
+				align-items: start;
+				border-top: 1px solid rgba(255, 255, 255, 0.08);
+				padding-top: 10px;
+				margin-top: 8px;
 			}
 			.contact-sep {
 				width: 1px;
@@ -557,7 +486,7 @@
 				gap: 3px;
 			}
 			.contact-value {
-				font-size: 13px;
+				font-size: 14px;
 				color: rgba(250, 245, 236, 0.68);
 				line-height: 1.3;
 				font-weight: 400;
@@ -635,14 +564,14 @@
 					<div class="order-info-col">
 						<span class="order-info-label">📅 Order Deadline</span>
 						<div class="order-info-value">
-							<strong>Sunday April 5th</strong> by 6:00 PM
+							<strong>Sunday April 12th</strong> by 6:00 PM
 						</div>
 					</div>
 					<div class="order-info-divider"></div>
 					<div class="order-info-col">
 						<span class="order-info-label">🥡 Pickup</span>
 						<div class="order-info-value">
-							<strong>Wednesday April 8th</strong> · 12 PM – 6 PM
+							<strong>Wednesday April 15th</strong> · 12 PM – 6 PM
 						</div>
 					</div>
 				</div>
@@ -650,25 +579,17 @@
 				<!-- Combo 1 – Vegan -->
 				<div class="combo-card vegan">
 					<div class="combo-header">
-						<div class="combo-title-group">
-							<div class="combo-icon">🥑</div>
-							<div>
-								<span class="combo-number">Combo 01</span>
-								<div class="combo-name">
-									Vegan Combo <span class="chip chip-vegan">🌿 All Vegan</span>
-								</div>
-							</div>
-						</div>
-						<div class="combo-price-block">
-							<span class="combo-pieces">15–16 pieces</span>
-							<span class="combo-price">$16.50</span>
-						</div>
+						<span class="combo-icon">🥑</span>
+						<span class="combo-number">Combo 1</span>
+						<span class="combo-name">Vegan</span>
+						<span class="combo-pieces">15–16 pcs</span>
+						<span class="combo-price">$16.50</span>
 					</div>
 					<div class="combo-body">
 						<div class="combo-row">
 							<span class="bullet">◆</span>
 							<span
-								>5 pcs <strong>Rainbow Roll</strong
+								>5 pcs <strong>Garden Rainbow Roll</strong
 								><span class="tag gf">GF</span><span class="tag v">V</span>
 								<span class="or">or</span>
 								5 pcs <strong>Veggie Dragon Roll</strong
@@ -679,10 +600,10 @@
 						<div class="combo-row">
 							<span class="bullet">◆</span>
 							<span
-								>2 pcs <strong>Tofu Inari Roll</strong
+								>2 pcs <strong>Tofu Inari</strong
 								><span class="tag v">V</span>
 								<span class="or">or</span>
-								3 pcs <strong>Veggie Bombs</strong><span class="tag v">V</span>
+								3 pcs <strong>Vegan Bomb</strong><span class="tag v">V</span>
 								<span class="or">or</span>
 								2 pcs <strong>Spring Maki</strong><span class="tag gf">GF</span
 								><span class="tag v">V</span></span
@@ -708,32 +629,21 @@
 					</div>
 				</div>
 
-				<div class="icon-divider">🍣 · 🌿 · 🍣 · 🌿 · 🍣</div>
-
 				<!-- Combo 2 – Fish & Veggie Mix -->
 				<div class="combo-card mix">
 					<div class="combo-header">
-						<div class="combo-title-group">
-							<div class="combo-icon">🌺</div>
-							<div>
-								<span class="combo-number">Combo 02</span>
-								<div class="combo-name">
-									Fish &amp; Veggie Combo
-									<span class="chip chip-mix">Best of Both</span>
-								</div>
-							</div>
-						</div>
-						<div class="combo-price-block">
-							<span class="combo-pieces">13–15 pieces</span>
-							<span class="combo-price">$17.50</span>
-						</div>
+						<span class="combo-icon">🌺</span>
+						<span class="combo-number">Combo 2</span>
+						<span class="combo-name">Fish &amp; Veggie</span>
+						<span class="combo-pieces">13–15 pcs</span>
+						<span class="combo-price">$17.50</span>
 					</div>
 					<div class="combo-body">
 						<div class="combo-row">
 							<span class="bullet">◆</span>
 							<span
 								>5 pcs <strong>Garden Rainbow Roll</strong
-								><span class="tag gf">GF</span>
+								><span class="tag gf">GF</span><span class="tag v">V</span>
 								<span class="or">or</span>
 								5 pcs <strong>Veggie Dragon Roll</strong
 								><span class="tag gf">GF</span
@@ -758,32 +668,21 @@
 						<div class="combo-row">
 							<span class="bullet">◆</span>
 							<span
-								>2 pcs <strong>Tofu Inari Roll</strong
+								>2 pcs <strong>Tofu Inari</strong
 								><span class="tag v">V</span></span
 							>
 						</div>
 					</div>
 				</div>
 
-				<div class="icon-divider">🍣 · 🌊 · 🍣 · 🌊 · 🍣</div>
-
 				<!-- Combo 3 – Fish & Seafood -->
 				<div class="combo-card fish">
 					<div class="combo-header">
-						<div class="combo-title-group">
-							<div class="combo-icon">🐟</div>
-							<div>
-								<span class="combo-number">Combo 03</span>
-								<div class="combo-name">
-									Fish &amp; Seafood Combo
-									<span class="chip chip-fish">Signature</span>
-								</div>
-							</div>
-						</div>
-						<div class="combo-price-block">
-							<span class="combo-pieces">14 pieces</span>
-							<span class="combo-price">$18.50</span>
-						</div>
+						<span class="combo-icon">🐟</span>
+						<span class="combo-number">Combo 3</span>
+						<span class="combo-name">Fish &amp; Seafood</span>
+						<span class="combo-pieces">14 pcs</span>
+						<span class="combo-price">$18.50</span>
 					</div>
 					<div class="combo-body">
 						<div class="combo-row">
@@ -812,7 +711,7 @@
 							<span class="bullet">◆</span
 							><span
 								>3 pcs <strong>Salmon Oshizushi</strong
-								><span class="tag gf">GF</span></span
+								></span
 							>
 						</div>
 						<div class="addons">
@@ -865,38 +764,40 @@
 
 			<!-- FOOTER -->
 			<div class="footer">
-				<div class="footer-top">
-					<div class="footer-left">
-						<span class="footer-icon">🍣</span>
-						<div class="footer-text">
-							<strong
-								>E-transfer payment required to confirm your order · Order by
-								Sunday April 5th at 6 PM</strong
-							>
+				<div class="contact-block">
+					<div class="contact-col">
+						<div class="contact-label">📅 Order Deadline</div>
+						<div class="contact-value">
+							<strong>Sunday April 12th</strong><br />by 6:00 PM
 						</div>
 					</div>
-					<div class="footer-icons">🍣🥢🍱</div>
+					<div class="contact-sep"></div>
+					<div class="contact-col">
+						<div class="contact-label">✉️ Order Email</div>
+						<div class="contact-value">
+							<strong>annie@sweetofeliacafe.com</strong>
+						</div>
+					</div>
+					<div class="contact-sep"></div>
+					<div class="contact-col">
+						<div class="contact-label">💳 E-Transfer</div>
+						<div class="contact-value">
+							<strong>Required</strong> to confirm
+						</div>
+					</div>
 				</div>
-				<div class="contact-block">
+				<div class="contact-block-pickup">
 					<div class="contact-col">
 						<div class="contact-label">📍 Pickup Location</div>
 						<div class="contact-value">
-							<strong>Sweet Ofelia Café</strong><br />52 King St East,
-							Brockville
+							<strong>Sweet Ofelia Café</strong><br />52 King St East, Brockville
 						</div>
 					</div>
 					<div class="contact-sep"></div>
 					<div class="contact-col">
-						<div class="contact-label">📅 Pickup Hours</div>
+						<div class="contact-label">🕐 Pickup Hours</div>
 						<div class="contact-value">
-							<strong>Wednesday April 8th</strong><br />12:00 PM – 6:00 PM
-						</div>
-					</div>
-					<div class="contact-sep"></div>
-					<div class="contact-col">
-						<div class="contact-label">✉️ Email / Order</div>
-						<div class="contact-value">
-							<strong>annie@sweetofeliacafe.com</strong>
+							<strong>Wednesday April 15th</strong><br />12:00 PM – 6:00 PM
 						</div>
 					</div>
 				</div>
