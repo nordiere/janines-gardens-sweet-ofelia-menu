@@ -18,3 +18,7 @@ $RECYCLE.BIN/
 *.jpg
 *.jpeg
 *.pdf
+
+# Local dev tooling (transient capture/render helpers)
+.serve.py
+.rendered.*
