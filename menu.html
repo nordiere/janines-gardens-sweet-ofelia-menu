@@ -8,7 +8,7 @@
 			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
 			rel="stylesheet"
 		/>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/dom-to-image-more@3/dist/dom-to-image-more.min.js"></script>
 		<style>
 			:root {
 				--ink: #0e0b0e;
@@ -510,20 +510,6 @@
 			<button class="save-btn" id="saveBtn" onclick="saveAsJpeg()">
 				💾 &nbsp;Save as JPEG
 			</button>
-			<button class="save-btn" id="pngBtn" onclick="saveAsPng()">
-				🖼️ &nbsp;Save as PNG
-			</button>
-			<button
-				class="save-btn"
-				id="pdfBtn"
-				onclick="saveAsPdf()"
-				style="
-					background: linear-gradient(135deg, #c0392b, #96281b);
-					color: #fff;
-				"
-			>
-				📄 &nbsp;Save as PDF
-			</button>
 		</div>
 
 		<div class="poster" id="poster">
@@ -806,117 +792,30 @@
 		<!-- /poster -->
 
 		<script>
-			async function saveAsPdf() {
-				const btn = document.getElementById("pdfBtn");
-				btn.textContent = "⏳  Generating…";
-				btn.disabled = true;
-				await new Promise((r) => setTimeout(r, 400));
-				try {
-					const canvas = await html2canvas(document.getElementById("poster"), {
-						scale: 3,
-						useCORS: true,
-						backgroundColor: "#0e0b0e",
-						logging: false,
-					});
-					const imgData = canvas.toDataURL("image/png");
-					const w = canvas.width,
-						h = canvas.height;
-					let iframe = document.getElementById("__printframe");
-					if (!iframe) {
-						iframe = document.createElement("iframe");
-						iframe.id = "__printframe";
-						iframe.style.cssText =
-							"position:fixed;top:-9999px;left:-9999px;width:1px;height:1px;border:none;";
-						document.body.appendChild(iframe);
-					}
-					const doc = iframe.contentDocument || iframe.contentWindow.document;
-					doc.open();
-					doc.write(`<!DOCTYPE html><html><head><title>Janine's Gardens – Sushi Menu</title>
-      <style>
-        * { margin:0; padding:0; box-sizing:border-box; }
-        body { background:#000; }
-        img { display:block; width:100%; height:auto; }
-        @page { margin:0; size:${w}px ${h}px; }
-      </style></head><body>
-      <img src="${imgData}" />
-      </body></html>`);
-					doc.close();
-					await new Promise((r) => setTimeout(r, 300));
-					iframe.contentWindow.focus();
-					iframe.contentWindow.print();
-					btn.textContent = "✅  Done!";
-					setTimeout(() => {
-						btn.textContent = "📄  Save as PDF";
-						btn.disabled = false;
-					}, 2500);
-				} catch (err) {
-					console.error(err);
-					btn.textContent = "⚠️  Error — try again";
-					btn.disabled = false;
-				}
-			}
-
 			async function saveAsJpeg() {
 				const btn = document.getElementById("saveBtn");
 				btn.textContent = "⏳  Generating…";
 				btn.disabled = true;
-				await new Promise((r) => setTimeout(r, 400));
 				try {
-					const canvas = await html2canvas(document.getElementById("poster"), {
-						scale: 3,
-						useCORS: true,
-						backgroundColor: "#0e0b0e",
-						logging: false,
+					const scale = 3;
+					const node = document.getElementById("poster");
+					const w = node.offsetWidth * scale;
+					const h = node.offsetHeight * scale;
+					const dataUrl = await domtoimage.toJpeg(node, {
+						quality: 0.96,
+						width: w,
+						height: h,
+						style: { transform: `scale(${scale})`, transformOrigin: "top left" },
 					});
-					canvas.toBlob(
-						(blob) => {
-							const url = URL.createObjectURL(blob);
-							const a = document.createElement("a");
-							a.href = url;
-							a.download = "janines-gardens-sushi-menu.jpg";
-							a.click();
-							URL.revokeObjectURL(url);
-							btn.textContent = "✅  Saved!";
-							setTimeout(() => {
-								btn.textContent = "💾  Save as JPEG";
-								btn.disabled = false;
-							}, 2500);
-						},
-						"image/jpeg",
-						0.96,
-					);
-				} catch (err) {
-					console.error(err);
-					btn.textContent = "⚠️  Error — try again";
-					btn.disabled = false;
-				}
-			}
-
-			async function saveAsPng() {
-				const btn = document.getElementById("pngBtn");
-				btn.textContent = "⏳  Generating…";
-				btn.disabled = true;
-				await new Promise((r) => setTimeout(r, 400));
-				try {
-					const canvas = await html2canvas(document.getElementById("poster"), {
-						scale: 3,
-						useCORS: true,
-						backgroundColor: "#0e0b0e",
-						logging: false,
-					});
-					canvas.toBlob((blob) => {
-						const url = URL.createObjectURL(blob);
-						const a = document.createElement("a");
-						a.href = url;
-						a.download = "janines-gardens-sushi-menu.png";
-						a.click();
-						URL.revokeObjectURL(url);
-						btn.textContent = "✅  Saved!";
-						setTimeout(() => {
-							btn.textContent = "🖼️  Save as PNG";
-							btn.disabled = false;
-						}, 2500);
-					}, "image/png");
+					const a = document.createElement("a");
+					a.href = dataUrl;
+					a.download = "janines-gardens-sushi-menu.jpg";
+					a.click();
+					btn.textContent = "✅  Saved!";
+					setTimeout(() => {
+						btn.textContent = "💾  Save as JPEG";
+						btn.disabled = false;
+					}, 2500);
 				} catch (err) {
 					console.error(err);
 					btn.textContent = "⚠️  Error — try again";
