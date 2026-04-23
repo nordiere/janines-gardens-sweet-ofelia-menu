@@ -24,3 +24,6 @@ $RECYCLE.BIN/
 .serve.py
 .update.py
 .rendered.*
+
+# Grip HTML exports (for printing — regenerated from the .md)
+orders/*.html
