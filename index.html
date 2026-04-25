@@ -421,11 +421,14 @@
 			}
 			.contact-block-pickup {
 				display: grid;
-				grid-template-columns: 1fr 1px 1fr;
+				grid-template-columns: 1fr 1px 1.3fr 1px 1fr;
 				align-items: start;
 				border-top: 1px solid rgba(255, 255, 255, 0.08);
 				padding-top: 19px;
 				margin-top: 15px;
+			}
+			.contact-block-pickup .contact-col-location {
+				grid-column: 3 / -1;
 			}
 			.contact-sep {
 				width: 1px;
@@ -517,14 +520,14 @@
 					<div class="order-info-col">
 						<span class="order-info-label">📅 Order Deadline</span>
 						<div class="order-info-value">
-							<strong>Monday April 20th</strong> by 6:00 PM
+							<strong>Monday</strong> by 6:00 PM
 						</div>
 					</div>
 					<div class="order-info-divider"></div>
 					<div class="order-info-col">
-						<span class="order-info-label">🥡 Pickup</span>
+						<span class="order-info-label">🥡 Pickup Day</span>
 						<div class="order-info-value">
-							<strong>Wednesday April 22nd</strong> · 2 PM – 6 PM
+							<strong>Wednesday</strong>
 						</div>
 					</div>
 				</div>
@@ -766,7 +769,7 @@
 					<div class="contact-col">
 						<div class="contact-label">📅 Order Deadline</div>
 						<div class="contact-value">
-							<strong>Monday April 20th</strong><br />by 6:00 PM
+							<strong>Monday</strong><br />by 6:00 PM
 						</div>
 					</div>
 					<div class="contact-sep"></div>
@@ -786,16 +789,16 @@
 				</div>
 				<div class="contact-block-pickup">
 					<div class="contact-col">
-						<div class="contact-label">📍 Pickup Location</div>
+						<div class="contact-label">📅 Pickup Day</div>
 						<div class="contact-value">
-							<strong>Sweet Ofelia Café</strong><br />52 King St East, Brockville
+							<strong>Wednesday</strong>
 						</div>
 					</div>
 					<div class="contact-sep"></div>
-					<div class="contact-col">
-						<div class="contact-label">🕐 Pickup Hours</div>
+					<div class="contact-col contact-col-location">
+						<div class="contact-label">📍 Pickup Location</div>
 						<div class="contact-value">
-							<strong>Wednesday April 22nd</strong><br />2:00 PM – 6:00 PM
+							<strong>Sweet Ofelia Café</strong> · 52 King St East, Brockville
 						</div>
 					</div>
 				</div>
