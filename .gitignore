@@ -16,6 +16,7 @@ $RECYCLE.BIN/
 # Rendered exports (menu is re-generated from HTML)
 *.png
 !logo.png
+!Janine's Garden's - Sweet Ofelia - menu - *.png
 *.jpg
 *.jpeg
 *.pdf
