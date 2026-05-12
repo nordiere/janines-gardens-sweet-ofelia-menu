@@ -25,6 +25,11 @@ $RECYCLE.BIN/
 .serve.py
 .update.py
 .rendered.*
+.transcribe.py
+.transcript.*
+
+# Voice-memo source recordings (transcribed via .transcribe.py)
+*.m4a
 
 # Grip HTML exports (for printing — regenerated from the .md)
 orders/*.html
