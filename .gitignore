@@ -20,6 +20,7 @@ $RECYCLE.BIN/
 *.jpg
 *.jpeg
 *.pdf
+!Janine's Gardens invoice *.pdf
 
 # Local dev tooling (transient capture/render helpers)
 .serve.py
