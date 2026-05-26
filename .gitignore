@@ -21,6 +21,7 @@ $RECYCLE.BIN/
 *.jpeg
 *.pdf
 !Janine's Gardens invoice *.pdf
+!orders/*-print.pdf
 
 # Local dev tooling (transient capture/render helpers)
 .serve.py
@@ -34,3 +35,4 @@ $RECYCLE.BIN/
 
 # Grip HTML exports (for printing — regenerated from the .md)
 orders/*.html
+!orders/*-print.html
